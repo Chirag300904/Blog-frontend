@@ -52,6 +52,7 @@ const BlogDetail = () => {
 
   useEffect(() => {
     getBlogDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   console.log(blog);

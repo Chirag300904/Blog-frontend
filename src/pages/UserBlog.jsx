@@ -18,9 +18,9 @@ const UserBlog = () => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     getUserBlog();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
