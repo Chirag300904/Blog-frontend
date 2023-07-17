@@ -8,7 +8,9 @@ const Blog = () => {
   // Get blogs
   const getAllBlog = async () => {
     try {
-      const { data } = await axios.get("/api/v1/blog/all-blog");
+      const { data } = await axios.get(
+        "https://blog-backend-itiv.onrender.com/api/v1/blog/all-blog"
+      );
       if (data?.success) {
         setBlogs(data?.blogs);
       }
