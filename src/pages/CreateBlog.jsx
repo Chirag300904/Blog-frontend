@@ -24,12 +24,15 @@ const CreateBlog = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/v1/blog/create-blog", {
-        title: inputs.title,
-        description: inputs.description,
-        image: inputs.image,
-        user: localStorage.getItem("userId"),
-      });
+      const { data } = await axios.post(
+        "https://blog-backend-itiv.onrender.com/api/v1/blog/create-blog",
+        {
+          title: inputs.title,
+          description: inputs.description,
+          image: inputs.image,
+          user: localStorage.getItem("userId"),
+        }
+      );
       if (data.success) {
         toast.success("Blog created successfully");
         navigate("/blogs");

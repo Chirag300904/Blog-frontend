@@ -25,11 +25,14 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/v1/user/register", {
-        username: inputs.username,
-        password: inputs.password,
-        email: inputs.email,
-      });
+      const { data } = await axios.post(
+        "https://blog-backend-itiv.onrender.com/api/v1/user/register",
+        {
+          username: inputs.username,
+          password: inputs.password,
+          email: inputs.email,
+        }
+      );
       if (data.success) {
         toast.success("User registration successfully");
         navigate("/login");

@@ -12,7 +12,9 @@ const BlogDetail = () => {
 
   // Get blog details
   const getBlogDetail = async () => {
-    const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
+    const { data } = await axios.get(
+      `https://blog-backend-itiv.onrender.com/api/v1/blog/get-blog/${id}`
+    );
 
     if (data?.success) {
       setBlog(data?.blog);
@@ -37,11 +39,14 @@ const BlogDetail = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.put(`/api/v1/blog/update-blog/${id}`, {
-        title: inputs.title,
-        description: inputs.description,
-        image: inputs.image,
-      });
+      const { data } = await axios.put(
+        `https://blog-backend-itiv.onrender.com/api/v1/blog/update-blog/${id}`,
+        {
+          title: inputs.title,
+          description: inputs.description,
+          image: inputs.image,
+        }
+      );
       if (data.success) {
         toast.success("Blog updated successfully");
       }

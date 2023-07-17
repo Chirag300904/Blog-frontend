@@ -27,10 +27,13 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/v1/user/login", {
-        password: inputs.password,
-        email: inputs.email,
-      });
+      const { data } = await axios.post(
+        "https://blog-backend-itiv.onrender.com/api/v1/user/login",
+        {
+          password: inputs.password,
+          email: inputs.email,
+        }
+      );
       if (data.success) {
         localStorage.setItem("userId", data?.user._id);
         localStorage.setItem("username", data?.user.username);

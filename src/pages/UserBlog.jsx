@@ -10,7 +10,9 @@ const UserBlog = () => {
   // Get User blogs
   const getUserBlog = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/blog//user-blog/${userId}`);
+      const { data } = await axios.get(
+        `https://blog-backend-itiv.onrender.com/api/v1/blog//user-blog/${userId}`
+      );
       if (data?.success) {
         setBlogs(data?.userBlogs);
       }

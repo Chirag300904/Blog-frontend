@@ -35,7 +35,9 @@ export default function BlogCard({
   };
   const handleDelete = async () => {
     try {
-      const { data } = await axios.delete(`api/v1/blog/delete-blog/${id}`);
+      const { data } = await axios.delete(
+        `https://blog-backend-itiv.onrender.com/api/v1/blog/delete-blog/${id}`
+      );
 
       if (data?.success) {
         toast.success("Blog deleted successfully");
